@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserLogoutBtnView" customModule="switf_MobileAssistant" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="151"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akj-zJ-qvz">
+                    <rect key="frame" x="20" y="57" width="395" height="37"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="bTc-Q3-R3O"/>
+                    </constraints>
+                    <state key="normal" title="退出登录">
+                        <color key="titleColor" red="0.22352941176470587" green="0.67450980392156867" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Akj-zJ-qvz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EnM-sI-wfn"/>
+                <constraint firstItem="Akj-zJ-qvz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="MI5-ZI-ZkQ"/>
+                <constraint firstItem="Akj-zJ-qvz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dYx-MK-JwL"/>
+                <constraint firstAttribute="trailing" secondItem="Akj-zJ-qvz" secondAttribute="trailing" constant="20" id="orA-9m-Yvh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="outBtn" destination="Akj-zJ-qvz" id="6oF-py-SoW"/>
+            </connections>
+            <point key="canvasLocation" x="-27.5" y="-65.5"/>
+        </view>
+    </objects>
+</document>

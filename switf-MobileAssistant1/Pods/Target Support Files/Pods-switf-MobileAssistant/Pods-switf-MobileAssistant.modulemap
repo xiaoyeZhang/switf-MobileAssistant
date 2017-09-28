@@ -1,0 +1,6 @@
+framework module Pods_switf_MobileAssistant {
+  umbrella header "Pods-switf-MobileAssistant-umbrella.h"
+
+  export *
+  module * { export * }
+}

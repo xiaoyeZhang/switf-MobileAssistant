@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="switf_MobileAssistant" customModuleProvider="target">
+            <connections>
+                <outlet property="company_news_Btn" destination="rio-11-z7i" id="IgU-kc-fJQ"/>
+                <outlet property="system_news_Btn" destination="R2c-9T-noy" id="BIB-TX-fYg"/>
+                <outlet property="tableView" destination="dG0-J2-GbY" id="wGy-PR-eat"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rio-11-z7i">
+                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                    <state key="normal" title="公司公告">
+                        <color key="titleColor" red="0.50196078430000002" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="change_State_Btn:" destination="-1" eventType="touchUpInside" id="YrC-Xo-4lt"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dG0-J2-GbY">
+                    <rect key="frame" x="0.0" y="35" width="375" height="632"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="EXv-Og-Qhl"/>
+                        <outlet property="delegate" destination="-1" id="R1h-FS-LyJ"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2c-9T-noy">
+                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                    <state key="normal" title="系统公告">
+                        <color key="titleColor" red="0.25882352941176467" green="0.73333333333333328" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="change_State_Btn:" destination="-1" eventType="touchUpInside" id="dXb-eg-flP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dG0-J2-GbY" secondAttribute="trailing" id="1KL-Sp-E6r"/>
+                <constraint firstAttribute="bottom" secondItem="dG0-J2-GbY" secondAttribute="bottom" id="94F-81-J3i"/>
+                <constraint firstItem="rio-11-z7i" firstAttribute="leading" secondItem="R2c-9T-noy" secondAttribute="trailing" id="QxZ-N5-vQv"/>
+                <constraint firstItem="dG0-J2-GbY" firstAttribute="top" secondItem="R2c-9T-noy" secondAttribute="bottom" constant="5" id="XJL-jY-5D7"/>
+                <constraint firstItem="R2c-9T-noy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b2h-lM-Aup"/>
+                <constraint firstItem="rio-11-z7i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dVh-y1-pYy"/>
+                <constraint firstAttribute="trailing" secondItem="rio-11-z7i" secondAttribute="trailing" id="eBk-PB-yiI"/>
+                <constraint firstItem="dG0-J2-GbY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mqT-zH-eCh"/>
+                <constraint firstItem="R2c-9T-noy" firstAttribute="width" secondItem="rio-11-z7i" secondAttribute="width" id="nHx-G9-0SX"/>
+                <constraint firstItem="R2c-9T-noy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tHy-W9-eAK"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
