@@ -25,11 +25,13 @@ let ClientVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as
 
 let APPClientVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
 
-//      屏幕宽度
+// 屏幕宽度
 let kScreenW = UIScreen.main.bounds.width
 //屏幕高度
 let kScreenH = UIScreen.main.bounds.height
 
+//业务列表刷新通知
+let BUSINESS_LIST_REFRESH_NOTIFY = "BusinessListRefreshNotify"
 
 // 角色
 let ROLE_TWO = "2" //二级经理

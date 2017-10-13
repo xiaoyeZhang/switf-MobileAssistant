@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class SuggestViewController: ZXYBaseViewController,UITextViewDelegate {
 
     @IBOutlet weak var TextView: UITextView!

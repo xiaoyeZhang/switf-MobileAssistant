@@ -65,7 +65,7 @@ class ContactAddViewController: ZXYBaseViewController,UITableViewDataSource,UITa
     func initData() {
 
         detailMuArr = [
-            ["title":"集团名称：",    "type":"Push","message":"compName","placeholder":""],
+            ["title":"集团名称：",    "type":"Push","message":"compName","placeholder":"请选择集团"],
             ["title":"集团地址：",    "type":"Label","message":"compAddress","placeholder":""],
             ["title":"成员种类：",    "type":"Select","message":"kind","SelectMess":"网内成员,网外成员","placeholder":""],
             ["title":"成员类型：",    "type":"Select","message":"type","SelectMess":"集团联系人,集团关键人","placeholder":""],
@@ -216,6 +216,20 @@ class ContactAddViewController: ZXYBaseViewController,UITableViewDataSource,UITa
         
         let process=CommServer()
 
+        if !detailDic.keys.contains("compNum") {
+            
+            self.ShowAlertCon(title: "警告", message: "集团不能为空", cancelTitle: "确定", popC: "0")
+            
+            return
+        }
+        
+        if detailDic["tel"] == "" {
+            
+            self.ShowAlertCon(title: "警告", message: "手机号不能为空", cancelTitle: "确定", popC: "0")
+            
+            return
+        }
+        
         var parameters:[String:String] =
             ["method":"client_add_update",
              "Job":detailDic["job"]!,
@@ -233,7 +247,14 @@ class ContactAddViewController: ZXYBaseViewController,UITableViewDataSource,UITa
              ]
 
         if detailDic.keys.contains("name"){
-
+            
+            if detailDic["name"] == "" {
+                
+                self.ShowAlertCon(title: "警告", message: "姓名不能为空", cancelTitle: "确定", popC: "0")
+                
+                return
+            }
+            
             parameters.updateValue(detailDic["name"]!, forKey: "CustName")
         
         }
@@ -245,6 +266,8 @@ class ContactAddViewController: ZXYBaseViewController,UITableViewDataSource,UITa
             
         }
         
+        SVProgressHUD.show()
+        
         process.processWithBlock(cmdStr: parameters) { (backMsg) in
             
             let state = backMsg.object(forKey: "state")
@@ -252,14 +275,22 @@ class ContactAddViewController: ZXYBaseViewController,UITableViewDataSource,UITa
             if (state as! NSString).intValue == 1{
 //                let array:NSArray = backMsg.object(forKey: "content") as! NSArray
                 
+                self.ShowAlertCon(title: "提示", message: "提交成功！", cancelTitle: "确定", popC: "1")
+                
                 self.add_Other_Data()
             
-                self.navigationController?.popViewController(animated: true)
+//                self.navigationController?.popViewController(animated: true)
+
+            }else if (state as! NSString).intValue == -1
+            {
+
+                self.ShowAlertCon(title: "提示", message: backMsg.object(forKey: "msg") as! String, cancelTitle: "确定", popC: "0")
 
             }
             
             self.tableView.reloadData()
 
+            SVProgressHUD.dismiss()
         }
         
     }

@@ -92,7 +92,7 @@ class MyGroupViewController: ZXYBaseViewController,UITableViewDelegate,UITableVi
              "is_first":myModel.is_first,
              ]
         
-        
+        SVProgressHUD.show()
         
         process.processWithBlock(cmdStr: parameters) { (backMsg) in
             
@@ -114,7 +114,7 @@ class MyGroupViewController: ZXYBaseViewController,UITableViewDelegate,UITableVi
             }
             
             self.tableView.reloadData()
-            
+            SVProgressHUD.dismiss()
         }
 
     }

@@ -32,10 +32,19 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     var expandDic:[String:Bool] = [:]
     
+    var finishDic:[String:String] = [:]
+    
+    deinit {
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "我的"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(subVCBackNeedRefresh), name: NSNotification.Name(rawValue: BUSINESS_LIST_REFRESH_NOTIFY), object: nil)
         
         reloadArray = [IndexPath]()
         
@@ -82,11 +91,11 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                              "fistLeaf":[["title":" 欠费催缴","viewController":""],
                                          ["title":" CRM业务办理情况","viewController":""],
                                          ["title":" 统一下单业务办理情况","viewController":""]]],
-                            ["title":"小纸条","icon":"小纸条工单icon","section":"","viewController":""],
-                            ["title":"欠费任务提醒","icon":"催缴任务","section":"","viewController":""],
-                            ["title":"合同到期提醒推送","icon":"合同到期-2","section":"","viewController":""],
-                            ["title":"客户生日提醒","icon":"生日提醒(1)","section":"","viewController":""],
-                            ["title":"APP应用推荐","icon":"业内应用推荐","section":"","viewController":""],
+                            ["title":"小纸条","icon":"小纸条工单icon","section":"","viewController":"small_piece_paperViewController"],
+                            ["title":"欠费任务提醒","icon":"催缴任务","section":"","viewController":"Payment_arrears_listViewController"],
+                            ["title":"合同到期提醒推送","icon":"合同到期-2","section":"","viewController":"Contract_expiresViewController"],
+                            ["title":"客户生日提醒","icon":"生日提醒(1)","section":"","viewController":"Birthday_listViewController"],
+                            ["title":"APP应用推荐","icon":"业内应用推荐","section":"","viewController":"recommendedViewController"],
                             ["title":"推送设置","icon":"设置推送时间","section":"","viewController":"PushSettingViewController"],
                             ["title":"修改密码","icon":"修改密码","section":"","viewController":"ChangePwdViewController"],
                             ["title":"修改手机号码","icon":"my_phone","section":"","viewController":"ChangePhoneViewController"],
@@ -99,9 +108,9 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             visitArray.add(["title":" 今天走访任务数","finish":"today_finish","total":"today"])
             visitArray.add(["title":" 本周走访任务数","finish":"this_week_finish","total":"this_week"])
             visitArray.add(["title":" 本月走访任务数","finish":"this_month_finish","total":"this_month"])
-            visitArray.add(["title":" 上月走访任务数数","finish":"last_month_finish","total":"last_month"])
-            visitArray.add(["title":" 本月已走访集团客户","finish":"last_month_finish","total":"last_month","secondLeaf":"1"])
-            visitArray.add(["title":" 本月未走访集团客户","finish":"last_month_finish","total":"last_month","secondLeaf":"2"])
+            visitArray.add(["title":" 上月走访任务数","finish":"last_month_finish","total":"last_month"])
+            visitArray.add(["title":" 本月已走访集团客户","finish":"this_month_visited_num","total":"this_month_visit_total_num","secondLeaf":"1"])
+            visitArray.add(["title":" 本月未走访集团客户","finish":"this_month_unvisit_num","total":"this_month_visit_total_num","secondLeaf":"2"])
             
             sectionArray = [["title":"待办事项","icon":"待办事项","section":"",
                              "fistLeaf":[["title":" 特号办理","num":"t1+t2","viewController":"P_SpecialListViewController"],
@@ -123,11 +132,11 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                              "fistLeaf":[["title":" 欠费催缴","viewController":""],
                                          ["title":" CRM业务办理情况","viewController":""],
                                          ["title":" 统一下单业务办理情况","viewController":""]]],
-                            ["title":"小纸条","icon":"小纸条工单icon","section":"","viewController":""],
-                            ["title":"欠费任务提醒","icon":"催缴任务","section":"","viewController":""],
-                            ["title":"合同到期提醒推送","icon":"合同到期-2","section":"","viewController":""],
-                            ["title":"客户生日提醒","icon":"生日提醒(1)","section":"","viewController":""],
-                            ["title":"APP应用推荐","icon":"业内应用推荐","section":"","viewController":""],
+                            ["title":"小纸条","icon":"小纸条工单icon","section":"","viewController":"small_piece_paperViewController"],
+                            ["title":"欠费任务提醒","icon":"催缴任务","section":"","viewController":"Payment_arrears_listViewController"],
+                            ["title":"合同到期提醒推送","icon":"合同到期-2","section":"","viewController":"Contract_expiresViewController"],
+                            ["title":"客户生日提醒","icon":"生日提醒(1)","section":"","viewController":"Birthday_listViewController"],
+                            ["title":"APP应用推荐","icon":"业内应用推荐","section":"","viewController":"recommendedViewController"],
                             ["title":"推送设置","icon":"设置推送时间","section":"","viewController":"PushSettingViewController"],
                             ["title":"修改密码","icon":"修改密码","section":"","viewController":"ChangePwdViewController"],
                             ["title":"修改手机号码","icon":"my_phone","section":"","viewController":"ChangePhoneViewController"],
@@ -274,14 +283,16 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             let fistdic:[String:Any] =  fistArr.object(at: indexPath.row) as! [String:Any]
             
             if fistdic.keys.contains("secondLeaf") {
-            
+
                 if fistdic["secondLeaf"] as! String == "3" {
                     
                     let entity:This_month_unvisitEntity = fistdic["message"] as! This_month_unvisitEntity
-                                        
+                    
                     cell.titleLbl.text = entity.name
                     
                 }else{
+                    
+                    cell.subTitleLbl.text = finishDic[fistdic["finish"] as! String]! + "/" + finishDic[fistdic["total"] as! String]!
                     
                     cell.titleLbl.text = fistdic["title"] as? String
 
@@ -391,14 +402,19 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         }else{
             
-            let targetVC:String = fistdic["viewController"] as! String
-            
-            if targetVC.isEmpty {
+            if fistdic.keys.contains("viewController") {
                 
-                return
+                let targetVC:String = fistdic["viewController"] as! String
+                
+                if targetVC.isEmpty {
+                    
+                    return
+                }
+                
+                self.pushViwController(targetVC: targetVC)
             }
             
-            self.pushViwController(targetVC: targetVC)
+           
             
         }
         
@@ -481,10 +497,14 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 
                 let dic:NSDictionary = backMsg.object(forKey: "content") as! NSDictionary
                 
-//                let this_month_visit_total_num = dic["total_num"]
-//                let this_month_visited_num = dic["visited_num"]
-//                let this_month_unvisit_num = dic["unvisit_num"]
+                let this_month_visit_total_num = dic["total_num"] as! Int
+                let this_month_visited_num = dic["visited_num"] as! Int
+                let this_month_unvisit_num = dic["unvisit_num"] as! Int
 
+                self.finishDic.updateValue(String(this_month_visit_total_num) , forKey: "this_month_visit_total_num")
+                self.finishDic.updateValue(String(this_month_visited_num) , forKey: "this_month_visited_num")
+                self.finishDic.updateValue(String(this_month_unvisit_num) , forKey: "this_month_unvisit_num")
+                
                 let visitedArr:NSArray = dic["visited"] as! NSArray
                 let unvisitedArr:NSArray = dic["unvisit"] as! NSArray
 
@@ -516,7 +536,7 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         
     }
-//代办事项的数据
+//MARK:代办事项的数据
     func getUnfinishedNum() {
         let process=CommServer()
         
@@ -557,7 +577,24 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         }
     }
     
-    //记录收起的数据
+    //MARK: 小纸条脚标
+    func gettape_num() {
+        let process=CommServer()
+        
+        let parameters:[String:String] =
+            ["method":"tape_num",
+             "user_id":myModel.user_id,
+             ]
+        process.processWithBlock(cmdStr: parameters) { (backMsg) in
+            
+            let tape_num = backMsg.object(forKey: "state") as! String
+           
+            print("\(tape_num)")
+            
+        }
+    }
+
+    //MARK:记录收起的数据
     func foldNodes(section : Int,currentIndex:Int,array:NSMutableArray){
         if currentIndex+1 < visitArray.count {
             
@@ -598,6 +635,13 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let vc = model.init()
         
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func subVCBackNeedRefresh() {
+        
+        self.getUnfinishedNum()
+        
+        self.gettape_num()
     }
     
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E27C9711F90506000C94C24 /* Arrears_taskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E27C96F1F90506000C94C24 /* Arrears_taskViewController.swift */; };
+		2E27C9721F90506000C94C24 /* Arrears_taskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E27C9701F90506000C94C24 /* Arrears_taskViewController.xib */; };
+		2E27C9761F9068DD00C94C24 /* small_piece_paperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E27C9741F9068DD00C94C24 /* small_piece_paperViewController.swift */; };
+		2E27C9771F9068DD00C94C24 /* small_piece_paperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E27C9751F9068DD00C94C24 /* small_piece_paperViewController.xib */; };
+		2E27C97A1F90696A00C94C24 /* Small_prece_paperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E27C9781F90696A00C94C24 /* Small_prece_paperTableViewCell.swift */; };
+		2E27C97B1F90696A00C94C24 /* Small_prece_paperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E27C9791F90696A00C94C24 /* Small_prece_paperTableViewCell.xib */; };
 		2E3777181F611D5200576F63 /* ZXYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3777161F611D5200576F63 /* ZXYBaseViewController.swift */; };
 		2E3777191F611D5200576F63 /* ZXYBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E3777171F611D5200576F63 /* ZXYBaseViewController.xib */; };
 		2E37771C1F6130A000576F63 /* TxtFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37771A1F6130A000576F63 /* TxtFieldTableViewCell.swift */; };
@@ -36,6 +42,20 @@
 		2E4ECC981F4EDA0500E13B08 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4ECC8C1F4EDA0500E13B08 /* NewsViewController.xib */; };
 		2E5ED09E1F4576AF000F3C10 /* BusinessListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5ED09C1F4576AF000F3C10 /* BusinessListCollectionViewCell.swift */; };
 		2E5ED09F1F4576AF000F3C10 /* BusinessListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5ED09D1F4576AF000F3C10 /* BusinessListCollectionViewCell.xib */; };
+		2E698A9B1F8F521700C740CD /* TwoLablesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E698A991F8F521700C740CD /* TwoLablesTableViewCell.swift */; };
+		2E698A9C1F8F521700C740CD /* TwoLablesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E698A9A1F8F521700C740CD /* TwoLablesTableViewCell.xib */; };
+		2E698AA01F8F610600C740CD /* Payment_arrears_listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E698A9E1F8F610600C740CD /* Payment_arrears_listViewController.swift */; };
+		2E698AA11F8F610600C740CD /* Payment_arrears_listViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E698A9F1F8F610600C740CD /* Payment_arrears_listViewController.xib */; };
+		2E6AB9A71F8EF4340079BAD8 /* Birthday_NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AB9A51F8EF4340079BAD8 /* Birthday_NewsTableViewCell.swift */; };
+		2E6AB9A81F8EF4340079BAD8 /* Birthday_NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6AB9A61F8EF4340079BAD8 /* Birthday_NewsTableViewCell.xib */; };
+		2E6AB9AB1F8F159A0079BAD8 /* Birthday_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AB9A91F8F159A0079BAD8 /* Birthday_DetailViewController.swift */; };
+		2E6AB9AC1F8F159A0079BAD8 /* Birthday_DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6AB9AA1F8F159A0079BAD8 /* Birthday_DetailViewController.xib */; };
+		2E6AB9AF1F8F3D820079BAD8 /* Birthday_departmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AB9AD1F8F3D820079BAD8 /* Birthday_departmentViewController.swift */; };
+		2E6AB9B01F8F3D820079BAD8 /* Birthday_departmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6AB9AE1F8F3D820079BAD8 /* Birthday_departmentViewController.xib */; };
+		2E6AB9B41F8F48FD0079BAD8 /* Contract_expiresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AB9B21F8F48FD0079BAD8 /* Contract_expiresViewController.swift */; };
+		2E6AB9B51F8F48FD0079BAD8 /* Contract_expiresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6AB9B31F8F48FD0079BAD8 /* Contract_expiresViewController.xib */; };
+		2E6AB9B81F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6AB9B61F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.swift */; };
+		2E6AB9B91F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6AB9B71F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.xib */; };
 		2E75A05A1F78D881005DF1EC /* P_SpecialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E75A0581F78D881005DF1EC /* P_SpecialListViewController.swift */; };
 		2E75A05B1F78D881005DF1EC /* P_SpecialListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E75A0591F78D881005DF1EC /* P_SpecialListViewController.xib */; };
 		2E75A0751F78E85C005DF1EC /* shareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E75A0731F78E85C005DF1EC /* shareViewController.swift */; };
@@ -56,6 +76,19 @@
 		2E9A5C611F749EE30079660E /* UserTaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9A5C5F1F749EE30079660E /* UserTaskListTableViewCell.xib */; };
 		2EA56DD31F4BBD5C004E4AD0 /* MyGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA56DD11F4BBD5C004E4AD0 /* MyGroupTableViewCell.swift */; };
 		2EA56DD41F4BBD5C004E4AD0 /* MyGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA56DD21F4BBD5C004E4AD0 /* MyGroupTableViewCell.xib */; };
+		2EB8661D1F909D920000F6CF /* small_piece_paperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8661B1F909D920000F6CF /* small_piece_paperDetailViewController.swift */; };
+		2EB8661E1F909D920000F6CF /* small_piece_paperDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB8661C1F909D920000F6CF /* small_piece_paperDetailViewController.xib */; };
+		2EB8E4401F8CB36A00D561F1 /* XYStartEndDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8E43F1F8CB36A00D561F1 /* XYStartEndDatePicker.swift */; };
+		2EB8E4431F8CBA6300D561F1 /* recommendedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8E4411F8CBA6300D561F1 /* recommendedViewController.swift */; };
+		2EB8E4441F8CBA6300D561F1 /* recommendedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB8E4421F8CBA6300D561F1 /* recommendedViewController.xib */; };
+		2EB8E4471F8DB8E300D561F1 /* Reommended_DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8E4451F8DB8E300D561F1 /* Reommended_DetailViewController.swift */; };
+		2EB8E4481F8DB8E300D561F1 /* Reommended_DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB8E4461F8DB8E300D561F1 /* Reommended_DetailViewController.xib */; };
+		2EB8E44B1F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8E4491F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.swift */; };
+		2EB8E44C1F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB8E44A1F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.xib */; };
+		2EB8E44F1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8E44D1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.swift */; };
+		2EB8E4501F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB8E44E1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.xib */; };
+		2EB8E4541F8E17E600D561F1 /* Birthday_listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8E4521F8E17E600D561F1 /* Birthday_listViewController.swift */; };
+		2EB8E4551F8E17E600D561F1 /* Birthday_listViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB8E4531F8E17E600D561F1 /* Birthday_listViewController.xib */; };
 		2EBE3CD31D9112960086FA45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE3CD21D9112960086FA45 /* AppDelegate.swift */; };
 		2EBE3CD51D9112960086FA45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE3CD41D9112960086FA45 /* ViewController.swift */; };
 		2EBE3CD81D9112960086FA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBE3CD61D9112960086FA45 /* Main.storyboard */; };
@@ -95,6 +128,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E27C96F1F90506000C94C24 /* Arrears_taskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrears_taskViewController.swift; sourceTree = "<group>"; };
+		2E27C9701F90506000C94C24 /* Arrears_taskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Arrears_taskViewController.xib; sourceTree = "<group>"; };
+		2E27C9741F9068DD00C94C24 /* small_piece_paperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = small_piece_paperViewController.swift; sourceTree = "<group>"; };
+		2E27C9751F9068DD00C94C24 /* small_piece_paperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = small_piece_paperViewController.xib; sourceTree = "<group>"; };
+		2E27C9781F90696A00C94C24 /* Small_prece_paperTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Small_prece_paperTableViewCell.swift; sourceTree = "<group>"; };
+		2E27C9791F90696A00C94C24 /* Small_prece_paperTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Small_prece_paperTableViewCell.xib; sourceTree = "<group>"; };
 		2E3777161F611D5200576F63 /* ZXYBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXYBaseViewController.swift; sourceTree = "<group>"; };
 		2E3777171F611D5200576F63 /* ZXYBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXYBaseViewController.xib; sourceTree = "<group>"; };
 		2E37771A1F6130A000576F63 /* TxtFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TxtFieldTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +163,20 @@
 		2E4ECC8C1F4EDA0500E13B08 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		2E5ED09C1F4576AF000F3C10 /* BusinessListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessListCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E5ED09D1F4576AF000F3C10 /* BusinessListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessListCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E698A991F8F521700C740CD /* TwoLablesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoLablesTableViewCell.swift; sourceTree = "<group>"; };
+		2E698A9A1F8F521700C740CD /* TwoLablesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoLablesTableViewCell.xib; sourceTree = "<group>"; };
+		2E698A9E1F8F610600C740CD /* Payment_arrears_listViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment_arrears_listViewController.swift; sourceTree = "<group>"; };
+		2E698A9F1F8F610600C740CD /* Payment_arrears_listViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Payment_arrears_listViewController.xib; sourceTree = "<group>"; };
+		2E6AB9A51F8EF4340079BAD8 /* Birthday_NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday_NewsTableViewCell.swift; sourceTree = "<group>"; };
+		2E6AB9A61F8EF4340079BAD8 /* Birthday_NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Birthday_NewsTableViewCell.xib; sourceTree = "<group>"; };
+		2E6AB9A91F8F159A0079BAD8 /* Birthday_DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday_DetailViewController.swift; sourceTree = "<group>"; };
+		2E6AB9AA1F8F159A0079BAD8 /* Birthday_DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Birthday_DetailViewController.xib; sourceTree = "<group>"; };
+		2E6AB9AD1F8F3D820079BAD8 /* Birthday_departmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday_departmentViewController.swift; sourceTree = "<group>"; };
+		2E6AB9AE1F8F3D820079BAD8 /* Birthday_departmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Birthday_departmentViewController.xib; sourceTree = "<group>"; };
+		2E6AB9B21F8F48FD0079BAD8 /* Contract_expiresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract_expiresViewController.swift; sourceTree = "<group>"; };
+		2E6AB9B31F8F48FD0079BAD8 /* Contract_expiresViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Contract_expiresViewController.xib; sourceTree = "<group>"; };
+		2E6AB9B61F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract_expries_DetailViewController.swift; sourceTree = "<group>"; };
+		2E6AB9B71F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Contract_expries_DetailViewController.xib; sourceTree = "<group>"; };
 		2E75A0581F78D881005DF1EC /* P_SpecialListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P_SpecialListViewController.swift; sourceTree = "<group>"; };
 		2E75A0591F78D881005DF1EC /* P_SpecialListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = P_SpecialListViewController.xib; sourceTree = "<group>"; };
 		2E75A0731F78E85C005DF1EC /* shareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shareViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +198,19 @@
 		2E9A5C5F1F749EE30079660E /* UserTaskListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTaskListTableViewCell.xib; sourceTree = "<group>"; };
 		2EA56DD11F4BBD5C004E4AD0 /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewCell.swift; sourceTree = "<group>"; };
 		2EA56DD21F4BBD5C004E4AD0 /* MyGroupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGroupTableViewCell.xib; sourceTree = "<group>"; };
+		2EB8661B1F909D920000F6CF /* small_piece_paperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = small_piece_paperDetailViewController.swift; sourceTree = "<group>"; };
+		2EB8661C1F909D920000F6CF /* small_piece_paperDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = small_piece_paperDetailViewController.xib; sourceTree = "<group>"; };
+		2EB8E43F1F8CB36A00D561F1 /* XYStartEndDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYStartEndDatePicker.swift; sourceTree = "<group>"; };
+		2EB8E4411F8CBA6300D561F1 /* recommendedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recommendedViewController.swift; sourceTree = "<group>"; };
+		2EB8E4421F8CBA6300D561F1 /* recommendedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recommendedViewController.xib; sourceTree = "<group>"; };
+		2EB8E4451F8DB8E300D561F1 /* Reommended_DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reommended_DetailViewController.swift; sourceTree = "<group>"; };
+		2EB8E4461F8DB8E300D561F1 /* Reommended_DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Reommended_DetailViewController.xib; sourceTree = "<group>"; };
+		2EB8E4491F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reommened_Detail_HeadViewTableViewCell.swift; sourceTree = "<group>"; };
+		2EB8E44A1F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Reommened_Detail_HeadViewTableViewCell.xib; sourceTree = "<group>"; };
+		2EB8E44D1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reommened_Detail_FoodViewTableViewCell.swift; sourceTree = "<group>"; };
+		2EB8E44E1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Reommened_Detail_FoodViewTableViewCell.xib; sourceTree = "<group>"; };
+		2EB8E4521F8E17E600D561F1 /* Birthday_listViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Birthday_listViewController.swift; sourceTree = "<group>"; };
+		2EB8E4531F8E17E600D561F1 /* Birthday_listViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Birthday_listViewController.xib; sourceTree = "<group>"; };
 		2EBE3CCF1D9112960086FA45 /* switf-MobileAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "switf-MobileAssistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBE3CD21D9112960086FA45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EBE3CD41D9112960086FA45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +267,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E27C9731F9068BF00C94C24 /* Small_piece_paper */ = {
+			isa = PBXGroup;
+			children = (
+				2E27C9741F9068DD00C94C24 /* small_piece_paperViewController.swift */,
+				2E27C9751F9068DD00C94C24 /* small_piece_paperViewController.xib */,
+				2EB8661B1F909D920000F6CF /* small_piece_paperDetailViewController.swift */,
+				2EB8661C1F909D920000F6CF /* small_piece_paperDetailViewController.xib */,
+			);
+			path = Small_piece_paper;
+			sourceTree = "<group>";
+		};
 		2E4C2E2C1F6BA9EF00442273 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +297,7 @@
 				2E3777171F611D5200576F63 /* ZXYBaseViewController.xib */,
 				2E9A5C521F6F9D2E0079660E /* MainBaseViewController.swift */,
 				2E9A5C531F6F9D2E0079660E /* MainBaseViewController.xib */,
+				2EB8E43F1F8CB36A00D561F1 /* XYStartEndDatePicker.swift */,
 				2E75A07F1F79E332005DF1EC /* switf-MobileAssistant-Bridging-Header.h */,
 			);
 			path = Common;
@@ -260,9 +338,35 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		2E698A9D1F8F60EA00C740CD /* Payment_arrears */ = {
+			isa = PBXGroup;
+			children = (
+				2E698A9E1F8F610600C740CD /* Payment_arrears_listViewController.swift */,
+				2E698A9F1F8F610600C740CD /* Payment_arrears_listViewController.xib */,
+				2E27C96F1F90506000C94C24 /* Arrears_taskViewController.swift */,
+				2E27C9701F90506000C94C24 /* Arrears_taskViewController.xib */,
+			);
+			path = Payment_arrears;
+			sourceTree = "<group>";
+		};
+		2E6AB9B11F8F48E40079BAD8 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				2E6AB9B21F8F48FD0079BAD8 /* Contract_expiresViewController.swift */,
+				2E6AB9B31F8F48FD0079BAD8 /* Contract_expiresViewController.xib */,
+				2E6AB9B61F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.swift */,
+				2E6AB9B71F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.xib */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
 		2E75A0701F78E235005DF1EC /* About */ = {
 			isa = PBXGroup;
 			children = (
+				2E27C9731F9068BF00C94C24 /* Small_piece_paper */,
+				2E698A9D1F8F60EA00C740CD /* Payment_arrears */,
+				2E6AB9B11F8F48E40079BAD8 /* Contract */,
+				2EB8E4511F8E17C900D561F1 /* Birthday */,
 				2E75A0731F78E85C005DF1EC /* shareViewController.swift */,
 				2E75A0741F78E85C005DF1EC /* shareViewController.xib */,
 				2E75A0771F78F370005DF1EC /* PushSettingViewController.swift */,
@@ -273,6 +377,10 @@
 				2EFB93391F7A2CA8001436ED /* ChangePwdViewController.xib */,
 				2EFB933C1F7C9FCE001436ED /* ChangePhoneViewController.swift */,
 				2EFB933D1F7C9FCE001436ED /* ChangePhoneViewController.xib */,
+				2EB8E4411F8CBA6300D561F1 /* recommendedViewController.swift */,
+				2EB8E4421F8CBA6300D561F1 /* recommendedViewController.xib */,
+				2EB8E4451F8DB8E300D561F1 /* Reommended_DetailViewController.swift */,
+				2EB8E4461F8DB8E300D561F1 /* Reommended_DetailViewController.xib */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -300,8 +408,31 @@
 				2EFB93411F7CE084001436ED /* PushSettingTableViewCell.xib */,
 				2EFB93441F7CE113001436ED /* SwitchTableViewCell.swift */,
 				2EFB93451F7CE113001436ED /* SwitchTableViewCell.xib */,
+				2EB8E4491F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.swift */,
+				2EB8E44A1F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.xib */,
+				2EB8E44D1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.swift */,
+				2EB8E44E1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.xib */,
+				2E6AB9A51F8EF4340079BAD8 /* Birthday_NewsTableViewCell.swift */,
+				2E6AB9A61F8EF4340079BAD8 /* Birthday_NewsTableViewCell.xib */,
+				2E698A991F8F521700C740CD /* TwoLablesTableViewCell.swift */,
+				2E698A9A1F8F521700C740CD /* TwoLablesTableViewCell.xib */,
+				2E27C9781F90696A00C94C24 /* Small_prece_paperTableViewCell.swift */,
+				2E27C9791F90696A00C94C24 /* Small_prece_paperTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2EB8E4511F8E17C900D561F1 /* Birthday */ = {
+			isa = PBXGroup;
+			children = (
+				2EB8E4521F8E17E600D561F1 /* Birthday_listViewController.swift */,
+				2EB8E4531F8E17E600D561F1 /* Birthday_listViewController.xib */,
+				2E6AB9A91F8F159A0079BAD8 /* Birthday_DetailViewController.swift */,
+				2E6AB9AA1F8F159A0079BAD8 /* Birthday_DetailViewController.xib */,
+				2E6AB9AD1F8F3D820079BAD8 /* Birthday_departmentViewController.swift */,
+				2E6AB9AE1F8F3D820079BAD8 /* Birthday_departmentViewController.xib */,
+			);
+			path = Birthday;
 			sourceTree = "<group>";
 		};
 		2EBE3CC61D9112960086FA45 = {
@@ -502,19 +633,31 @@
 				2E4ECC981F4EDA0500E13B08 /* NewsViewController.xib in Resources */,
 				2E918FF11F3D899F00B460C9 /* MainTableViewCell.xib in Resources */,
 				2E9A5C5B1F7390330079660E /* UserLogoutBtnView.xib in Resources */,
+				2E698A9C1F8F521700C740CD /* TwoLablesTableViewCell.xib in Resources */,
 				2E4C2E271F6A7F2000442273 /* NewsTableViewCell.xib in Resources */,
 				2E75A05B1F78D881005DF1EC /* P_SpecialListViewController.xib in Resources */,
 				2E9A5C611F749EE30079660E /* UserTaskListTableViewCell.xib in Resources */,
 				2E4C2E301F6BA9EF00442273 /* WebViewController.xib in Resources */,
+				2E6AB9AC1F8F159A0079BAD8 /* Birthday_DetailViewController.xib in Resources */,
 				2E4ECC901F4EDA0500E13B08 /* ContactAddViewController.xib in Resources */,
+				2E27C9771F9068DD00C94C24 /* small_piece_paperViewController.xib in Resources */,
+				2EB8E44C1F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.xib in Resources */,
 				2EA56DD41F4BBD5C004E4AD0 /* MyGroupTableViewCell.xib in Resources */,
 				2E4ECC8E1F4EDA0500E13B08 /* AboutViewController.xib in Resources */,
 				2EBE3D031D9114520086FA45 /* LoginViewController.xib in Resources */,
+				2E698AA11F8F610600C740CD /* Payment_arrears_listViewController.xib in Resources */,
+				2E6AB9B51F8F48FD0079BAD8 /* Contract_expiresViewController.xib in Resources */,
+				2EB8E4481F8DB8E300D561F1 /* Reommended_DetailViewController.xib in Resources */,
 				2E4ECC941F4EDA0500E13B08 /* MainViewController.xib in Resources */,
 				2EFB933F1F7C9FCE001436ED /* ChangePhoneViewController.xib in Resources */,
+				2EB8E4551F8E17E600D561F1 /* Birthday_listViewController.xib in Resources */,
 				2E5ED09F1F4576AF000F3C10 /* BusinessListCollectionViewCell.xib in Resources */,
 				2E75A07A1F78F370005DF1EC /* PushSettingViewController.xib in Resources */,
+				2EB8661E1F909D920000F6CF /* small_piece_paperDetailViewController.xib in Resources */,
 				2EBE3CDD1D9112960086FA45 /* LaunchScreen.storyboard in Resources */,
+				2E6AB9A81F8EF4340079BAD8 /* Birthday_NewsTableViewCell.xib in Resources */,
+				2E6AB9B91F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.xib in Resources */,
+				2EB8E4441F8CBA6300D561F1 /* recommendedViewController.xib in Resources */,
 				2E4ECC961F4EDA0500E13B08 /* MyGroupViewController.xib in Resources */,
 				2E75A07E1F78F3D8005DF1EC /* SuggestViewController.xib in Resources */,
 				2E37771D1F6130A000576F63 /* TxtFieldTableViewCell.xib in Resources */,
@@ -524,8 +667,12 @@
 				2EBE3CDA1D9112960086FA45 /* Assets.xcassets in Resources */,
 				2E3777271F629B2700576F63 /* CustomerViewController.xib in Resources */,
 				2EFB933B1F7A2CA8001436ED /* ChangePwdViewController.xib in Resources */,
+				2E6AB9B01F8F3D820079BAD8 /* Birthday_departmentViewController.xib in Resources */,
+				2EB8E4501F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.xib in Resources */,
+				2E27C97B1F90696A00C94C24 /* Small_prece_paperTableViewCell.xib in Resources */,
 				2E3777191F611D5200576F63 /* ZXYBaseViewController.xib in Resources */,
 				2E4ECC921F4EDA0500E13B08 /* CoustomerViewController.xib in Resources */,
+				2E27C9721F90506000C94C24 /* Arrears_taskViewController.xib in Resources */,
 				2EBE3CD81D9112960086FA45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E75A0751F78E85C005DF1EC /* shareViewController.swift in Sources */,
+				2EB8E44B1F8DC46500D561F1 /* Reommened_Detail_HeadViewTableViewCell.swift in Sources */,
 				2E4ECC801F4ED9C600E13B08 /* UserEntity.swift in Sources */,
 				2EFB93461F7CE113001436ED /* SwitchTableViewCell.swift in Sources */,
 				2E4C2E2F1F6BA9EF00442273 /* WebViewController.swift in Sources */,
@@ -608,32 +756,48 @@
 				2E4ECC951F4EDA0500E13B08 /* MyGroupViewController.swift in Sources */,
 				2EBE3CD51D9112960086FA45 /* ViewController.swift in Sources */,
 				2E9A5C541F6F9D2E0079660E /* MainBaseViewController.swift in Sources */,
+				2E6AB9A71F8EF4340079BAD8 /* Birthday_NewsTableViewCell.swift in Sources */,
 				2EFB933A1F7A2CA8001436ED /* ChangePwdViewController.swift in Sources */,
+				2E6AB9B41F8F48FD0079BAD8 /* Contract_expiresViewController.swift in Sources */,
 				2E4ECC7E1F4ED9C600E13B08 /* CommServer.swift in Sources */,
+				2EB8E4401F8CB36A00D561F1 /* XYStartEndDatePicker.swift in Sources */,
 				2EFB93421F7CE084001436ED /* PushSettingTableViewCell.swift in Sources */,
+				2E6AB9B81F8F4C8C0079BAD8 /* Contract_expries_DetailViewController.swift in Sources */,
 				2E918FF01F3D899F00B460C9 /* MainTableViewCell.swift in Sources */,
 				2E4ECC911F4EDA0500E13B08 /* CoustomerViewController.swift in Sources */,
 				2E4C2E261F6A7F2000442273 /* NewsTableViewCell.swift in Sources */,
 				2E4ECC931F4EDA0500E13B08 /* MainViewController.swift in Sources */,
+				2EB8E4431F8CBA6300D561F1 /* recommendedViewController.swift in Sources */,
 				2E9A5C4F1F6F62650079660E /* UserTableCellHeaderView.swift in Sources */,
 				2EFB933E1F7C9FCE001436ED /* ChangePhoneViewController.swift in Sources */,
 				2E4ECC7F1F4ED9C600E13B08 /* Maco.swift in Sources */,
+				2EB8661D1F909D920000F6CF /* small_piece_paperDetailViewController.swift in Sources */,
 				2E5ED09E1F4576AF000F3C10 /* BusinessListCollectionViewCell.swift in Sources */,
+				2E698AA01F8F610600C740CD /* Payment_arrears_listViewController.swift in Sources */,
 				2E3777181F611D5200576F63 /* ZXYBaseViewController.swift in Sources */,
+				2E27C97A1F90696A00C94C24 /* Small_prece_paperTableViewCell.swift in Sources */,
 				2EA56DD31F4BBD5C004E4AD0 /* MyGroupTableViewCell.swift in Sources */,
 				2E4ECC8F1F4EDA0500E13B08 /* ContactAddViewController.swift in Sources */,
+				2EB8E44F1F8DC47900D561F1 /* Reommened_Detail_FoodViewTableViewCell.swift in Sources */,
 				2E3777261F629B2700576F63 /* CustomerViewController.swift in Sources */,
 				2E9A5C601F749EE30079660E /* UserTaskListTableViewCell.swift in Sources */,
 				2E4ECC791F4ED96600E13B08 /* CompEntity.swift in Sources */,
+				2E27C9761F9068DD00C94C24 /* small_piece_paperViewController.swift in Sources */,
 				2E37771C1F6130A000576F63 /* TxtFieldTableViewCell.swift in Sources */,
+				2E27C9711F90506000C94C24 /* Arrears_taskViewController.swift in Sources */,
 				2EDB73181F78983400FBEEA7 /* This_month_unvisitEntity.swift in Sources */,
 				2E4C2E231F6A64DF00442273 /* NewsEntity.swift in Sources */,
+				2EB8E4471F8DB8E300D561F1 /* Reommended_DetailViewController.swift in Sources */,
 				2E75A0791F78F370005DF1EC /* PushSettingViewController.swift in Sources */,
 				2E9A5C5D1F7392BC0079660E /* UserLogoutBtnView.swift in Sources */,
 				2E75A05A1F78D881005DF1EC /* P_SpecialListViewController.swift in Sources */,
+				2E6AB9AB1F8F159A0079BAD8 /* Birthday_DetailViewController.swift in Sources */,
+				2E6AB9AF1F8F3D820079BAD8 /* Birthday_departmentViewController.swift in Sources */,
 				2EBE3CD31D9112960086FA45 /* AppDelegate.swift in Sources */,
 				2E4ECC971F4EDA0500E13B08 /* NewsViewController.swift in Sources */,
+				2E698A9B1F8F521700C740CD /* TwoLablesTableViewCell.swift in Sources */,
 				2E75A07D1F78F3D8005DF1EC /* SuggestViewController.swift in Sources */,
+				2EB8E4541F8E17E600D561F1 /* Birthday_listViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
