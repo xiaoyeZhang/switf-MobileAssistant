@@ -38,8 +38,6 @@ class PushSettingViewController: ZXYBaseViewController,UITableViewDelegate,UITab
         
         tableView .register(cellNib2, forCellReuseIdentifier: "SwitchTableViewCell")
         
-        tableView.tableFooterView = UIView()
-        
         dataArr = [["title":"周日","select":false],
                     ["title":"周一","select":false],
                     ["title":"周二","select":false],
@@ -52,6 +50,7 @@ class PushSettingViewController: ZXYBaseViewController,UITableViewDelegate,UITab
                     ["title":"客户生日提醒","Switch_select":false],
                     ["title":"长期未拜访","Switch_select":false]]
         
+        tableView.tableFooterView = UIView()
         
         self.getSettingFromServer()
     }
