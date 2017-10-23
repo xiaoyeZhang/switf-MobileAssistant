@@ -77,6 +77,34 @@ class small_piece_paperDetailViewController: ZXYBaseViewController,UITextViewDel
     
     @IBAction func submitBtn(_ sender: UIButton) {
     
+        if reply_contentView.text.characters.count == 0 {
+            self.ShowAlertCon(title: "警告", message: "回复信息不能为空", cancelTitle: "确认", popC: "0")
+        }
+        
+        SVProgressHUD.show()
+        
+        let process=CommServer()
+        
+        let parameters:[String:String] = ["method":"tape_reply",
+                                          "tape_id":self.entity.tape_id!,
+                                          "content":self.reply_contentView.text]
+        
+        process.processWithBlock(cmdStr: parameters) { (backMsg) in
+            
+            let state = backMsg.object(forKey: "state")
+            
+            if (state as! NSString).intValue == 0 {
+                
+
+            }else{
+                
+                self.ShowAlertCon(title: "提示", message: "提交成功", cancelTitle: "确定", popC: "1")
+                
+            }
+            
+            SVProgressHUD.dismiss()
+            
+        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

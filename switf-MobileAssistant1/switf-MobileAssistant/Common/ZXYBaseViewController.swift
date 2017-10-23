@@ -72,6 +72,9 @@ class ZXYBaseViewController: UIViewController{
             action in
             if popC == "1"{
                 self.navigationController?.popViewController(animated: true)
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: BUSINESS_LIST_REFRESH_NOTIFY), object: nil)
+                
             }
             
         })
