@@ -119,26 +119,22 @@ class small_piece_paperViewController: ZXYBaseViewController,UITableViewDelegate
         cell.nameLabel.text = "客户经理姓名：" + entity.user_name!
         cell.timeLabel.text = "发送时间：" + entity.create_time!
         
-//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 10, height: 18))
-//        label.text = cell.titleLabel.text
-//        
-//        let size = label.sizeThatFits(CGSize(width: label.frame.size.width, height: CGFloat(MAXFLOAT)))
-//        
-//        let iconImage = UIImageView(frame: CGRect(x: size.width + cell.titleLabel.frame.origin.x+3, y: 15, width: 18, height: 18))
-//        
-//        if (entity.img_name?.characters.count)! > 0 {
-//            
-//            iconImage.removeFromSuperview()
-//    
-//            cell.addSubview(iconImage)
-//
-//            iconImage.image = UIImage(named: "icon_has_img")
-//            
-//            
-//        }else{
-//            
-//            iconImage.isHidden = true
-//        }
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 10, height: 18))
+        label.text = cell.titleLabel.text
+        
+        let size = label.sizeThatFits(CGSize(width: label.frame.size.width, height: CGFloat(MAXFLOAT)))
+
+
+        if (entity.img_name?.characters.count)! > 0 {
+            
+            cell.iconImage.isHidden = false
+            
+            cell.iconImage.frame = CGRect(x: size.width + cell.titleLabel.frame.origin.x+3, y: 15, width: 18, height: 18)
+            
+        }else{
+            
+            cell.iconImage.isHidden = true
+        }
         
         
         return cell
@@ -192,6 +188,10 @@ class small_piece_paperViewController: ZXYBaseViewController,UITableViewDelegate
     }
     
     func addBtnClicked() {
+        
+        let vc = small_piece_paperSubmitViewController()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

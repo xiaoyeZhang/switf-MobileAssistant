@@ -55,16 +55,14 @@
                         <outlet property="delegate" destination="-1" id="yCz-t4-Ky9"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-zS-QiT">
-                    <rect key="frame" x="173" y="5" width="24" height="23"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-zS-QiT">
+                    <rect key="frame" x="173" y="11" width="7" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-8p-UZf">
-                    <rect key="frame" x="246" y="5" width="24" height="23"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-8p-UZf">
+                    <rect key="frame" x="246" y="11" width="7" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -73,15 +71,19 @@
             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Xfc-aG-dRJ" secondAttribute="trailing" id="2lr-AK-aLX"/>
+                <constraint firstItem="ND5-zS-QiT" firstAttribute="leading" secondItem="vMZ-Os-CJg" secondAttribute="trailing" constant="-14.5" id="4ZF-zj-5ce"/>
+                <constraint firstItem="RKU-8p-UZf" firstAttribute="leading" secondItem="zuc-0R-n6D" secondAttribute="trailing" constant="-16.5" id="7HV-Ua-ZVP"/>
                 <constraint firstItem="Xfc-aG-dRJ" firstAttribute="top" secondItem="vMZ-Os-CJg" secondAttribute="bottom" constant="10" id="92V-oj-Sh3"/>
                 <constraint firstItem="vMZ-Os-CJg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="MiJ-su-fJj"/>
                 <constraint firstAttribute="bottom" secondItem="Xfc-aG-dRJ" secondAttribute="bottom" id="Oeb-UA-Abd"/>
+                <constraint firstItem="zuc-0R-n6D" firstAttribute="top" secondItem="RKU-8p-UZf" secondAttribute="bottom" constant="-18" id="QbH-f5-hDb"/>
                 <constraint firstItem="zuc-0R-n6D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="fuB-x7-v3S"/>
+                <constraint firstItem="vMZ-Os-CJg" firstAttribute="top" secondItem="ND5-zS-QiT" secondAttribute="bottom" constant="-18" id="jN6-Xo-Ia9"/>
                 <constraint firstItem="vMZ-Os-CJg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-37.5" id="mFS-4h-FLn"/>
                 <constraint firstItem="zuc-0R-n6D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="37.5" id="uVX-bo-Uli"/>
                 <constraint firstItem="Xfc-aG-dRJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vuo-De-ytD"/>
             </constraints>
-            <point key="canvasLocation" x="54" y="-147"/>
+            <point key="canvasLocation" x="31.5" y="-153.5"/>
         </view>
     </objects>
 </document>

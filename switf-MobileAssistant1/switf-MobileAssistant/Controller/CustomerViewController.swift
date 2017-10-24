@@ -22,8 +22,6 @@ class CustomerViewController: ZXYBaseViewController,UITableViewDelegate,UITableV
     
     var delegate:ContactAddViewControllerDelegate?
     
-
-    
     var arrayCustomerTemp:NSMutableArray = []
     var arrayCutomer:NSMutableArray = []
     

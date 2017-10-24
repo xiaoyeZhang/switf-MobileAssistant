@@ -72,7 +72,27 @@ class small_piece_paperDetailViewController: ZXYBaseViewController,UITextViewDel
     }
     
     @IBAction func btnTableViewCellBtnClicked(_ sender: UIButton) {
-    
+//        if (self.entity.img_name.length > 0) {
+//            NSString *names = [self.entity.img_name substringFromIndex:1];
+//            if (names.length > 0) {
+//                NSArray *imagesNameArr = [names componentsSeparatedByString:@","];
+//                
+//                ImagesBrowserViewController *vc = [[ImagesBrowserViewController alloc] init];
+//                vc.imagesNameArray = imagesNameArr;
+//                [self.navigationController pushViewController:vc animated:YES];
+//            }
+//        }
+        
+        if (self.entity.img_name?.characters.count)! > 0 {
+            
+            let imagesNameArr = self.entity.img_name?.components(separatedBy: ",")
+            
+            let vc = ImagesBrowserViewController()
+            
+            vc.imagesNameArray = imagesNameArr! as NSArray
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func submitBtn(_ sender: UIButton) {
@@ -118,7 +138,6 @@ class small_piece_paperDetailViewController: ZXYBaseViewController,UITextViewDel
         return true
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagesBrowserViewController" customModule="switf_MobileAssistant" customModuleProvider="target">
+            <connections>
+                <outlet property="ScrollView" destination="SPp-Xv-7U4" id="kGa-jT-B71"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPp-Xv-7U4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SPp-Xv-7U4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kug-9M-GVI"/>
+                <constraint firstAttribute="trailing" secondItem="SPp-Xv-7U4" secondAttribute="trailing" id="L26-xr-qbb"/>
+                <constraint firstItem="SPp-Xv-7U4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aKn-9t-3Q5"/>
+                <constraint firstAttribute="bottom" secondItem="SPp-Xv-7U4" secondAttribute="bottom" id="vxj-Xe-fZl"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
