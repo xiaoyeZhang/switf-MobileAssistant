@@ -8,7 +8,7 @@
 
 import UIKit
 
-class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDelegate,UITextFieldDelegate,AddPhotoViewControllerDelegate {
+class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDelegate,UITextFieldDelegate,AddPhotoViewControllerDelegate,XYDatePickerDelegate {
 
     @IBOutlet weak var titleTextFile: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -16,7 +16,7 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
     @IBOutlet weak var user_nameTextFile: UITextField!
     @IBOutlet weak var end_timeTextFile: UITextField!
     
-    var uploadImagesArr:NSArray = []
+    var uploadImagesArr:NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +42,13 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
     func updownImage() {
         
         let vc = P_AddPhotoViewController()
+        vc.imagesMuArr = self.uploadImagesArr
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
-    func addPhotoViewController(imagesArr: NSArray) {
+    func addPhotoViewController(imagesArr: NSMutableArray) {
         
         self.uploadImagesArr = imagesArr
     }
@@ -74,14 +75,21 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
 //            vc.tcVC = self;
             
             self.navigationController?.pushViewController(vc, animated: true)
-            
+
+            return false
+
         }else if textField == self.end_timeTextFile {
             
-//            self.changeDate()
+            self.changeDate()
+
+            return false
+
+        }else{
             
+            return true
+
         }
 
-        return false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -91,6 +99,41 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
     }
     
     func changeDate() {
+
+        self.end_timeTextFile.resignFirstResponder()
+
+        let datePicker = XYDatePicker()
+        datePicker.initWithFrame(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH))
+        datePicker.delegate = self
+        datePicker.datePicker.datePickerMode = .date
+
+        if (self.end_timeTextFile.text?.characters.count)! > 0{
+            
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            datePicker.date = dateFormatter.date(from: self.end_timeTextFile.text!)
+
+        }
+        
+        datePicker.show()
+        
+    }
+    
+    func datePickerDonePressed(datePicker: XYDatePicker) {
+    
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.setLocalizedDateFormatFromTemplate("zh_CN")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let dateStr = dateFormatter.string(from: datePicker.date)
+        
+        self.end_timeTextFile.text = dateStr
+    }
+    
+    func datePickerCancelPressed(datePicker: XYDatePicker) {
         
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 protocol AddPhotoViewControllerDelegate: class {
     
-    func addPhotoViewController(imagesArr:NSArray)
+    func addPhotoViewController(imagesArr:NSMutableArray)
     
 }
 
@@ -50,11 +50,34 @@ class P_AddPhotoViewController: ZXYBaseViewController,UICollectionViewDataSource
         //调用代理方法
         if((delegate) != nil)
         {
+            for i in 0 ..< imagesMuArr.count {
+                if imagesMuArr[i] is UIImage{
+                    
+                }else{
+                    var imageUrl:String = ""
+                    
+                    if (imagesMuArr[i] as! String).range(of: ".") != nil {
+                        
+                        imageUrl = String(format: "%@%@", TERMINAL_PHOTO_URL,imagesMuArr[i] as! CVarArg)
+                    }else{
+                        imageUrl = String(format: "%@%@.jpg", TERMINAL_PHOTO_URL,imagesMuArr[i] as! CVarArg)
+                    }
+                    
+                    let image = UIImageView()
+                    
+                    if let url = URL(string: imageUrl) {
+                        
+                        image.downloadedFrom(url: url)
+                        
+                    }
+                    imagesMuArr.replaceObject(at: i, with: image.image!)
+                }
+            }
             delegate?.addPhotoViewController(imagesArr: imagesMuArr)
-            self.navigationController?.popViewController(animated: true)
         }
 
-        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     func deleteBtnClicked(sender:UIButton) {

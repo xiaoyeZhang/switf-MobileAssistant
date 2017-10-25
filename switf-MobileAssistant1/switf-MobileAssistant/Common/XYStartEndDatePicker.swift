@@ -14,9 +14,7 @@ class XYStartEndDatePicker: UIView {
 
     let bgView = UIView()
     let control = UIControl()
-    
-//    - (instancetype)initWithFrame:(CGRect)frame
-    
+        
     func  initWithFrame(frame:CGRect) -> XYStartEndDatePicker {
         
         
