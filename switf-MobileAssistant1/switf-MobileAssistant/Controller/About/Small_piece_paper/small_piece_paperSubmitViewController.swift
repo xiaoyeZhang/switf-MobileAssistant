@@ -7,15 +7,17 @@
 //
 
 import UIKit
-
-class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDelegate,UITextFieldDelegate,AddPhotoViewControllerDelegate,XYDatePickerDelegate {
+import Alamofire
+class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDelegate,UITextFieldDelegate,AddPhotoViewControllerDelegate,XYDatePickerDelegate,No_visit_listViewControllerDelegate {
 
     @IBOutlet weak var titleTextFile: UITextField!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageBtn: UIButton!
     @IBOutlet weak var user_nameTextFile: UITextField!
     @IBOutlet weak var end_timeTextFile: UITextField!
-    
+    var cusName = ""
+    var cus_id = ""
+
     var uploadImagesArr:NSMutableArray = []
     
     override func viewDidLoad() {
@@ -36,7 +38,93 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
 
     func addBtnClicked() {
         
+        if !isDone{
+            return
+        }
         
+        isDone = false
+        
+        let process=CommServer()
+        
+        let parameters:[String:String] = ["method":"tape_add",
+                                          "end_time":self.end_timeTextFile.text!,
+                                          "content":self.textView.text!,
+                                          "title":self.titleTextFile.text!,
+                                          "user_ids":cus_id,
+                                          "create_id":myModel.user_id]
+        
+        process.processWithBlock(cmdStr: parameters) { (backMsg) in
+            
+            let state = backMsg.object(forKey: "state") as! NSNumber
+            
+            if state != 0 {
+                let tape_id = backMsg.object(forKey: "content")
+            
+                
+                self.uploadImagesWithIndex(index: 0, tape_id: tape_id as! String)
+                
+                print("\(String(describing: tape_id))")
+            }
+
+            self.isDone = true
+
+        }
+    }
+    
+    func uploadImagesWithIndex(index:Int,tape_id:String){
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                //采用post表单上传
+                // 参数解释：
+                //withName:和后台服务器的name要一致 ；fileName:可以充分利用写成用户的id，但是格式要写对； mimeType：规定的，要上传其他格式可以自行百度查一下
+//                multipartFormData.append(imageData, withName: "file", fileName: "123456.jpg", mimeType: "image/jpeg")
+                //如果需要上传多个文件,就多添加几个
+                //multipartFormData.append(imageData, withName: "file", fileName: "123456.jpg", mimeType: "image/jpeg")
+                //......
+                
+                
+            let method = "common_upload"
+            let upload_type = "tape"
+                
+                
+            multipartFormData.append(method.data(using: String.Encoding.utf8)!, withName: "method")
+            multipartFormData.append(tape_id.data(using: String.Encoding.utf8)!, withName: "tape_id")
+            multipartFormData.append(upload_type.data(using: String.Encoding.utf8)!, withName: "upload_type")
+                
+            for i in 0 ..< self.uploadImagesArr.count{
+                
+                let imageName = (UIDevice.current.identifierForVendor?.uuidString)! + ".jpg"
+                
+                let data = UIImageJPEGRepresentation(self.uploadImagesArr[i] as! UIImage, 0.5)
+                
+                multipartFormData.append(imageName.data(using: String.Encoding.utf8)!, withName: "picname")
+                multipartFormData.append(data!, withName: "file", fileName:imageName, mimeType: "image/png")
+            }
+                
+        },to: BASEURL,encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                //连接服务器成功后，对json的处理
+                upload.responseJSON { response in
+                    //解包
+                    guard let result = response.result.value else { return }
+                    print("json:\(result)")  //  result: state = 1;
+                    
+//                    if result["state"] == "1"{
+//                        result.o
+//                    }
+                    
+                }
+                //获取上传进度
+                upload.uploadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                    print("图片上传进度: \(progress.fractionCompleted)")
+                }
+            case .failure(let encodingError):
+                //打印连接失败原因
+                print(encodingError)
+            }
+        })
     }
     
     func updownImage() {
@@ -72,7 +160,7 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
             
             let vc = No_visit_listViewController()
             
-//            vc.tcVC = self;
+            vc.delegate = self
             
             self.navigationController?.pushViewController(vc, animated: true)
 
@@ -114,11 +202,26 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
             dateFormatter.dateFormat = "yyyy-MM-dd"
             
             datePicker.date = dateFormatter.date(from: self.end_timeTextFile.text!)
-
+            
         }
         
         datePicker.show()
         
+    }
+    
+    func setCustomer(ex: NSMutableArray) {
+        
+        cusName = ""
+        cus_id = ""
+        for i in 0 ..< ex.count  {
+            
+            let entity:No_visit_listEntity = ex.object(at: i) as! No_visit_listEntity
+            
+            cusName = cusName + ";" + entity.name!
+            cus_id = cus_id + ";" + entity.user_id!
+        }
+
+        self.user_nameTextFile.text = cusName.substring(from: cusName.index(cusName.startIndex, offsetBy: 1))
     }
     
     func datePickerDonePressed(datePicker: XYDatePicker) {

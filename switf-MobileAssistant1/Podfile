@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'switf-MobileAssistant' do
 
-pod 'Alamofire', '~> 4.0'
+pod 'Alamofire'
 
 pod 'SVProgressHUD'
 

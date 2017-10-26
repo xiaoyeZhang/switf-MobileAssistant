@@ -56,14 +56,12 @@ class PushSettingViewController: ZXYBaseViewController,UITableViewDelegate,UITab
     }
 
     func submitBtnClicked()  {
+                
+        if !isDone{
+            return
+        }
         
-//        var isDone = true
-//        
-//        if !isDone{
-//            return
-//        }
-//        
-//        isDone = false
+        isDone = false
         
         let selectedMuArr:NSMutableArray = []
         
@@ -120,7 +118,8 @@ class PushSettingViewController: ZXYBaseViewController,UITableViewDelegate,UITab
                 
             }
             
-        
+            self.isDone = true
+            
             SVProgressHUD.dismiss()
         }
 

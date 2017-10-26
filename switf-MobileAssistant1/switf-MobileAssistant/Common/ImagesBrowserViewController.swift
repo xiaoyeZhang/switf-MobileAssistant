@@ -49,7 +49,7 @@ class ImagesBrowserViewController: ZXYBaseViewController {
 
             var imageUrl:String = ""
             
-            if type == "1" {
+            if (imagesMuArr[i] as! String).range(of: ".") != nil {
                 
                 imageUrl = String(format: "%@%@", TERMINAL_PHOTO_URL,imagesMuArr[i] as! String)
             }else{

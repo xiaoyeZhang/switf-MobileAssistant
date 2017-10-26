@@ -14,7 +14,9 @@ class ZXYBaseViewController: UIViewController{
     
     let userDefaults = UserDefaults()
     var myModel:UserEntity!
-    
+
+    var isDone = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

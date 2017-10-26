@@ -26,7 +26,7 @@ class CommServer: NSObject {
 //        let cmdStr = cmdStr as! NSMutableDictionary
         
 //        cmdStr.setValue("ddd", forKey: "rere")
-        
+  
         Alamofire.request(BASEURL,parameters: cmdStr
             ).responseJSON { response in
                 
@@ -95,7 +95,6 @@ class CommServer: NSObject {
         
         
     }
-    
     
 //    func ProcessWithBlock(cmdStr : NSDictionary ,blockProperty:@escaping fucBlock) -> (Bool) {
 //        
