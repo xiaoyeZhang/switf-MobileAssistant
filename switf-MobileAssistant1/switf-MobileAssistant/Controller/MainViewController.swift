@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class MainViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource{
     
     @IBOutlet weak var WebScrollView: UIScrollView!
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var MainCollectionView: UICollectionView!
     @IBOutlet weak var Already_visitedLabel: UILabel!
     @IBOutlet weak var Not_visitedLabel: UILabel!
     @IBOutlet weak var P_StockLabel: UILabel!
@@ -26,7 +27,8 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var myModel:UserEntity!
     
     var MainTableViewArr:NSMutableArray!
-
+    var MainBusinessArr:NSMutableArray!
+    
     var Already_visitedstrCount:NSString = "0"
     var Not_visitedstrCount:NSString = "0"
     
@@ -89,6 +91,30 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         tableView .register(cellNib, forCellReuseIdentifier: "MainTableViewCell")
         
+        //MARK: CollectionView
+        
+        self.MainCollectionView.backgroundColor = UIColor.white
+        
+        MainBusinessArr = [["section":"0","list":
+                                    [["title":"统一下单","icon":"下单-(1)","viewController":"统一下单业务","VCbool":"0"],
+                                    ["title":"走访任务","icon":"拜访-(1)","viewController":"走访任务系统","VCbool":"0"],
+                                    ["title":"订单中心","icon":"订单-(4)","viewController":"订单中心","VCbool":"0"],
+                                    ["title":"CRM业务","icon":"crm-(1)","viewController":"CRM业务办理","VCbool":"0"],
+                                    ["title":"小纸条工单","icon":"TAB-纸条","viewController":"small_piece_paperViewController","VCbool":"1"],
+                                    ["title":"营销中心","icon":"集合","viewController":"Marketing_CenterListViewController","VCbool":"1"],
+                                    ["title":"实名认证","icon":"实名","viewController":"","VCbool":"1"],
+                                    ["title":"集中化管理","icon":"集中受理中心","viewController":"Centralized_managementViewController","VCbool":"1"]]],
+                            ["section":"1","list":
+                                    [["title":"CRM查看","icon":"CRM-1","viewController":"data_statisticsWebViewController","VCbool":"1","select_type":"2","VCname":"CRM业务办理情况"],
+                                     ["title":"统一下单查看","icon":"下单","viewController":"data_statisticsWebViewController","VCbool":"1","select_type":"3","VCname":"统一下单业务办理情况"]]]
+                            ]
+        
+        let CollcellNib = UINib(nibName: "Central_manageCollectionViewCell", bundle: nil)
+        
+        MainCollectionView.register(CollcellNib, forCellWithReuseIdentifier: "Central_manageCollectionViewCell")
+        
+        MainCollectionView!.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView");
+
     }
 
     
@@ -160,6 +186,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -169,6 +196,161 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let vc = MainBaseViewController()
         
         vc.name = dic["title"]!
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK: UICollectionView
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return MainBusinessArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        for iC in 0 ..< MainBusinessArr.count {
+            if section == iC {
+                return ((MainBusinessArr.object(at: iC) as! NSDictionary).object(forKey: "list") as! NSArray).count
+            }
+        }
+        
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        return CGSize(width: (collectionView.bounds.size.width - 10)/4, height: 70)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: NSInteger) -> CGSize {
+        
+        return CGSize(width: collectionView.bounds.size.width, height: 25)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell:Central_manageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Central_manageCollectionViewCell", for: indexPath) as! Central_manageCollectionViewCell
+        cell.backgroundColor = UIColor.white
+        
+        let dic:[String:String] =  ((MainBusinessArr.object(at: indexPath.section) as! NSDictionary).object(forKey: "list") as! NSArray).object(at: indexPath.row) as! [String:String]
+        
+        cell.titleLable.text = dic["title"]
+        cell.iconImageView.image = UIImage(named: dic["icon"]!)
+        cell.iconImageView.contentMode = UIViewContentMode.scaleAspectFit
+        cell.titleLable.font = UIFont.systemFont(ofSize: 12)
+        cell.backgroundColor = UIColor.white
+        
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        var headerView = UICollectionReusableView()
+        
+        if kind == UICollectionElementKindSectionHeader {
+            
+            headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath)
+            
+            headerView.backgroundColor = Maco().RGBA(r: 244, g: 244, b: 244, a: 1)
+
+            let titilabel = UILabel(frame: CGRect(x: 10, y: 0, width: 100, height: 25))
+            
+            titilabel.font = UIFont.systemFont(ofSize: 13)
+            titilabel.textColor = Maco().RGBA(r: 130, g: 130, b: 130, a: 1)
+            
+            if indexPath.section == 0{
+                titilabel.text = "常用功能"
+            }else if indexPath.section == 1{
+                titilabel.text = "其他功能"
+            }else{
+                
+            }
+            headerView.addSubview(titilabel)
+            
+        }
+
+        return headerView
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+
+        let strType = (((MainBusinessArr.object(at: indexPath.section) as! NSDictionary).object(forKey: "list") as! NSArray).object(at: indexPath.row) as! NSDictionary).object(forKey: "VCbool") as! String
+        let viewControllerStr = (((MainBusinessArr.object(at: indexPath.section) as! NSDictionary).object(forKey: "list") as! NSArray).object(at: indexPath.row) as! NSDictionary).object(forKey: "viewController") as! String
+        if strType == "0" {
+            
+            self.goViewController(strType: viewControllerStr)
+            
+        }else{
+            
+            if viewControllerStr == "data_statisticsWebViewController"{
+             
+                 let select_type = (((MainBusinessArr.object(at: indexPath.section) as! NSDictionary).object(forKey: "list") as! NSArray).object(at: indexPath.row) as! NSDictionary).object(forKey: "select_type") as! String
+                
+                let vc = data_statisticsWebViewController()
+                
+                vc.select_type = select_type
+                
+                vc.name = (((MainBusinessArr.object(at: indexPath.section) as! NSDictionary).object(forKey: "list") as! NSArray).object(at: indexPath.row) as! NSDictionary).object(forKey: "VCname") as! String
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            
+            }else{
+                
+                if viewControllerStr.isEmpty {
+                    
+                    return
+                }
+                
+                self.pushViwController(targetVC: viewControllerStr)
+
+            }
+        }
+
+    }
+    
+    func goViewController(strType:String) {
+        
+        
+        let vc = MainBaseViewController()
+        
+        vc.name = strType
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        if myModel.type_id == ROLE_SOCOALCHANNEL {
+//            if strType == "订单中心" {
+//                [self goMainBaseViewController:strType];
+//            }
+//        }else{
+//            if strType == "0" {
+//               
+//                [self doProvinceVIP:nil];
+//            
+//            }else if strType == "2"{
+//                
+//                [self doEnterBusiness:nil];
+//                
+//            }else{
+//                [self goMainBaseViewController:strType];
+//            }
+//        }
+    }
+    
+    func pushViwController(targetVC:String) {
+        
+        var NameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"]as? String
+        
+        NameSpace = NameSpace?.replacingOccurrences(of: "-", with: "_")
+        
+        let clsName = NameSpace! + "." + targetVC
+        
+        let model = NSClassFromString(clsName) as! UIViewController.Type
+        
+        let vc = model.init()
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

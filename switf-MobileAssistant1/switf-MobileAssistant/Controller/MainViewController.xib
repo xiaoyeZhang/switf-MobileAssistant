@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="switf_MobileAssistant" customModuleProvider="target">
             <connections>
                 <outlet property="Already_visitedLabel" destination="Pth-XR-E6A" id="Utc-CK-tgX"/>
+                <outlet property="MainCollectionView" destination="RVX-P5-BMR" id="bF4-oI-wXP"/>
                 <outlet property="Not_visitedLabel" destination="fB1-mM-1Ye" id="1yg-xZ-VQP"/>
                 <outlet property="P_BillLabel" destination="wjS-la-Iu7" id="Tw0-b6-J7e"/>
                 <outlet property="P_BookLabel" destination="zHP-p7-EDG" id="rAM-c0-ykr"/>
@@ -115,24 +116,38 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vPo-5P-Dy5">
                     <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="dhj-v8-dQu"/>
-                        <outlet property="delegate" destination="-1" id="yv8-ko-rTn"/>
-                    </connections>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RVX-P5-BMR">
+                    <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="yht-nJ-QPF">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="2" maxX="0.0" maxY="2"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Nid-Fd-jNW"/>
+                        <outlet property="delegate" destination="-1" id="uo8-5G-5gS"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="RVX-P5-BMR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2SA-fq-2eQ"/>
                 <constraint firstItem="coQ-Qh-1Sw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fln-Pm-ptz"/>
                 <constraint firstItem="coQ-Qh-1Sw" firstAttribute="width" secondItem="96I-uI-79v" secondAttribute="width" id="HTr-eK-5Xj"/>
                 <constraint firstItem="vPo-5P-Dy5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mpd-dv-RQN"/>
                 <constraint firstItem="96I-uI-79v" firstAttribute="top" secondItem="gSa-DL-Ead" secondAttribute="bottom" id="R8v-pa-r6Q"/>
                 <constraint firstAttribute="bottom" secondItem="vPo-5P-Dy5" secondAttribute="bottom" id="TMR-u0-sfn"/>
                 <constraint firstAttribute="trailing" secondItem="gSa-DL-Ead" secondAttribute="trailing" id="WYK-dT-7h9"/>
+                <constraint firstItem="RVX-P5-BMR" firstAttribute="top" secondItem="coQ-Qh-1Sw" secondAttribute="bottom" id="Wpz-Nz-8fB"/>
                 <constraint firstAttribute="trailing" secondItem="vPo-5P-Dy5" secondAttribute="trailing" id="XXI-9g-vn0"/>
                 <constraint firstItem="coQ-Qh-1Sw" firstAttribute="top" secondItem="gSa-DL-Ead" secondAttribute="bottom" id="aB7-G6-0qw"/>
                 <constraint firstItem="vPo-5P-Dy5" firstAttribute="top" secondItem="coQ-Qh-1Sw" secondAttribute="bottom" id="bne-zd-x7j"/>
+                <constraint firstAttribute="trailing" secondItem="RVX-P5-BMR" secondAttribute="trailing" id="ezh-XS-S2w"/>
                 <constraint firstItem="gSa-DL-Ead" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fWA-V6-dek"/>
+                <constraint firstAttribute="bottom" secondItem="RVX-P5-BMR" secondAttribute="bottom" id="nJ5-Hi-axt"/>
                 <constraint firstAttribute="trailing" secondItem="96I-uI-79v" secondAttribute="trailing" id="oUb-kI-yrG"/>
                 <constraint firstItem="gSa-DL-Ead" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w4E-JX-tvl"/>
                 <constraint firstItem="96I-uI-79v" firstAttribute="leading" secondItem="coQ-Qh-1Sw" secondAttribute="trailing" id="xUd-Bl-Tf0"/>

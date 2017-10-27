@@ -99,6 +99,7 @@ class small_piece_paperDetailViewController: ZXYBaseViewController,UITextViewDel
     
         if reply_contentView.text.characters.count == 0 {
             self.ShowAlertCon(title: "警告", message: "回复信息不能为空", cancelTitle: "确认", popC: "0")
+            return
         }
         
         SVProgressHUD.show()

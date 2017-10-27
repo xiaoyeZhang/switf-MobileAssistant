@@ -34,6 +34,7 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
         addBtn.addTarget(self, action: #selector(addBtnClicked), for: UIControlEvents.touchUpInside)
         
         self.imageBtn.addTarget(self, action: #selector(updownImage), for: UIControlEvents.touchUpInside)
+        
     }
 
     func addBtnClicked() {
@@ -44,7 +45,34 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
         
         isDone = false
         
+        
+        if self.titleTextFile.text?.characters.count == 0 {
+            self.ShowAlertCon(title: "警告", message: "主题不能为空！", cancelTitle: "确定", popC: "0")
+
+            isDone = true
+            return
+        }
+        
+        if self.textView.text?.characters.count == 0 {
+            
+            self.ShowAlertCon(title: "警告", message: "内容不能为空！", cancelTitle: "确定", popC: "0")
+            
+            isDone = true
+            return
+        }
+        
+        if self.user_nameTextFile.text?.characters.count == 0 {
+
+            self.ShowAlertCon(title: "警告", message: "请选择客户经理！", cancelTitle: "确定", popC: "0")
+            
+            isDone = true
+            return
+        }
+
         let process=CommServer()
+        
+        
+        SVProgressHUD.show()
         
         let parameters:[String:String] = ["method":"tape_add",
                                           "end_time":self.end_timeTextFile.text!,
@@ -59,11 +87,16 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
             
             if state != 0 {
                 let tape_id = backMsg.object(forKey: "content")
-            
+
+                if self.uploadImagesArr.count != 0{
+                    
+                    self.uploadImagesWithIndex(index: 0, tape_id: tape_id as! String)
+
+                }else{
+                    SVProgressHUD.dismiss()
+                    self.ShowAlertCon(title: "提示", message: "提交成功", cancelTitle: "确定", popC: "0")
+                }
                 
-                self.uploadImagesWithIndex(index: 0, tape_id: tape_id as! String)
-                
-                print("\(String(describing: tape_id))")
             }
 
             self.isDone = true
@@ -83,7 +116,6 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
                 //multipartFormData.append(imageData, withName: "file", fileName: "123456.jpg", mimeType: "image/jpeg")
                 //......
                 
-                
             let method = "common_upload"
             let upload_type = "tape"
                 
@@ -92,15 +124,12 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
             multipartFormData.append(tape_id.data(using: String.Encoding.utf8)!, withName: "tape_id")
             multipartFormData.append(upload_type.data(using: String.Encoding.utf8)!, withName: "upload_type")
                 
-            for i in 0 ..< self.uploadImagesArr.count{
+            let imageName = UUID().uuidString + ".jpg"
                 
-                let imageName = (UIDevice.current.identifierForVendor?.uuidString)! + ".jpg"
-                
-                let data = UIImageJPEGRepresentation(self.uploadImagesArr[i] as! UIImage, 0.5)
-                
-                multipartFormData.append(imageName.data(using: String.Encoding.utf8)!, withName: "picname")
-                multipartFormData.append(data!, withName: "file", fileName:imageName, mimeType: "image/png")
-            }
+            let data = UIImageJPEGRepresentation(self.uploadImagesArr[index] as! UIImage, 0.5)
+            
+            multipartFormData.append(imageName.data(using: String.Encoding.utf8)!, withName: "picname")
+            multipartFormData.append(data!, withName: "file", fileName:imageName, mimeType: "image/png")
                 
         },to: BASEURL,encodingCompletion: { encodingResult in
             switch encodingResult {
@@ -110,10 +139,22 @@ class small_piece_paperSubmitViewController: ZXYBaseViewController,UITextViewDel
                     //解包
                     guard let result = response.result.value else { return }
                     print("json:\(result)")  //  result: state = 1;
-                    
-//                    if result["state"] == "1"{
-//                        result.o
-//                    }
+                    let resule:NSDictionary = result as! NSDictionary
+                    print("\(String(describing: resule["state"]))")
+                    if resule["state"] as! NSNumber == 1{
+
+                        if index < self.uploadImagesArr.count - 1{
+                            self.uploadImagesWithIndex(index: index+1, tape_id: tape_id)
+                        }else{
+                            
+                            SVProgressHUD.dismiss()
+                            
+                            self.ShowAlertCon(title: "提示", message: "提交成功", cancelTitle: "确定", popC: "1")
+                        }
+
+                    }else{
+                        self.ShowAlertCon(title: "提示", message: "图片上传失败", cancelTitle: "确定", popC: "1")
+                    }
                     
                 }
                 //获取上传进度

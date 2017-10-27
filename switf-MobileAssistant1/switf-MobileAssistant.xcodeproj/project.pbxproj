@@ -99,6 +99,10 @@
 		2EBE3D021D9114520086FA45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE3D001D9114520086FA45 /* LoginViewController.swift */; };
 		2EBE3D031D9114520086FA45 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EBE3D011D9114520086FA45 /* LoginViewController.xib */; };
 		2EDB73181F78983400FBEEA7 /* This_month_unvisitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDB73171F78983400FBEEA7 /* This_month_unvisitEntity.swift */; };
+		2EE3CE971FA316FD0035DB9F /* Centralized_managementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE3CE951FA316FD0035DB9F /* Centralized_managementViewController.swift */; };
+		2EE3CE981FA316FD0035DB9F /* Centralized_managementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE3CE961FA316FD0035DB9F /* Centralized_managementViewController.xib */; };
+		2EE3CE9C1FA3192D0035DB9F /* Marketing_CenterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE3CE9A1FA3192D0035DB9F /* Marketing_CenterListViewController.swift */; };
+		2EE3CE9D1FA3192D0035DB9F /* Marketing_CenterListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE3CE9B1FA3192D0035DB9F /* Marketing_CenterListViewController.xib */; };
 		2EED636A1F9ED869009B45F4 /* ImagesBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED63681F9ED869009B45F4 /* ImagesBrowserViewController.swift */; };
 		2EED636B1F9ED869009B45F4 /* ImagesBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EED63691F9ED869009B45F4 /* ImagesBrowserViewController.xib */; };
 		2EED636E1F9F105B009B45F4 /* small_piece_paperSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED636C1F9F105B009B45F4 /* small_piece_paperSubmitViewController.swift */; };
@@ -110,6 +114,10 @@
 		2EED637A1F9F281F009B45F4 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED63781F9F281F009B45F4 /* PhotosCollectionViewCell.swift */; };
 		2EED637B1F9F281F009B45F4 /* PhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EED63791F9F281F009B45F4 /* PhotosCollectionViewCell.xib */; };
 		2EED637D1FA07495009B45F4 /* XYDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED637C1FA07495009B45F4 /* XYDatePicker.swift */; };
+		2EED63801FA30615009B45F4 /* Central_manageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED637E1FA30615009B45F4 /* Central_manageCollectionViewCell.swift */; };
+		2EED63811FA30615009B45F4 /* Central_manageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EED637F1FA30615009B45F4 /* Central_manageCollectionViewCell.xib */; };
+		2EED63851FA310C3009B45F4 /* data_statisticsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EED63831FA310C3009B45F4 /* data_statisticsWebViewController.swift */; };
+		2EED63861FA310C3009B45F4 /* data_statisticsWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EED63841FA310C3009B45F4 /* data_statisticsWebViewController.xib */; };
 		2EFB933A1F7A2CA8001436ED /* ChangePwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB93381F7A2CA8001436ED /* ChangePwdViewController.swift */; };
 		2EFB933B1F7A2CA8001436ED /* ChangePwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EFB93391F7A2CA8001436ED /* ChangePwdViewController.xib */; };
 		2EFB933E1F7C9FCE001436ED /* ChangePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB933C1F7C9FCE001436ED /* ChangePhoneViewController.swift */; };
@@ -238,6 +246,10 @@
 		2EBE3D001D9114520086FA45 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2EBE3D011D9114520086FA45 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		2EDB73171F78983400FBEEA7 /* This_month_unvisitEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = This_month_unvisitEntity.swift; sourceTree = "<group>"; };
+		2EE3CE951FA316FD0035DB9F /* Centralized_managementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Centralized_managementViewController.swift; sourceTree = "<group>"; };
+		2EE3CE961FA316FD0035DB9F /* Centralized_managementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Centralized_managementViewController.xib; sourceTree = "<group>"; };
+		2EE3CE9A1FA3192D0035DB9F /* Marketing_CenterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketing_CenterListViewController.swift; sourceTree = "<group>"; };
+		2EE3CE9B1FA3192D0035DB9F /* Marketing_CenterListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Marketing_CenterListViewController.xib; sourceTree = "<group>"; };
 		2EED63681F9ED869009B45F4 /* ImagesBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesBrowserViewController.swift; sourceTree = "<group>"; };
 		2EED63691F9ED869009B45F4 /* ImagesBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesBrowserViewController.xib; sourceTree = "<group>"; };
 		2EED636C1F9F105B009B45F4 /* small_piece_paperSubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = small_piece_paperSubmitViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +261,10 @@
 		2EED63781F9F281F009B45F4 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		2EED63791F9F281F009B45F4 /* PhotosCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		2EED637C1FA07495009B45F4 /* XYDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYDatePicker.swift; sourceTree = "<group>"; };
+		2EED637E1FA30615009B45F4 /* Central_manageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Central_manageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2EED637F1FA30615009B45F4 /* Central_manageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Central_manageCollectionViewCell.xib; sourceTree = "<group>"; };
+		2EED63831FA310C3009B45F4 /* data_statisticsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data_statisticsWebViewController.swift; sourceTree = "<group>"; };
+		2EED63841FA310C3009B45F4 /* data_statisticsWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = data_statisticsWebViewController.xib; sourceTree = "<group>"; };
 		2EFB93381F7A2CA8001436ED /* ChangePwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePwdViewController.swift; sourceTree = "<group>"; };
 		2EFB93391F7A2CA8001436ED /* ChangePwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePwdViewController.xib; sourceTree = "<group>"; };
 		2EFB933C1F7C9FCE001436ED /* ChangePhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePhoneViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +363,8 @@
 		2E4ECC7A1F4ED98900E13B08 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2EE3CE991FA319220035DB9F /* Marketing_Center */,
+				2EE3CE941FA316E50035DB9F /* Cen_management */,
 				2E75A0701F78E235005DF1EC /* About */,
 				2E4C2E2C1F6BA9EF00442273 /* Web */,
 				2E4ECC871F4EDA0500E13B08 /* MainViewController.swift */,
@@ -394,6 +412,7 @@
 		2E75A0701F78E235005DF1EC /* About */ = {
 			isa = PBXGroup;
 			children = (
+				2EED63821FA310A7009B45F4 /* data_statistics */,
 				2E27C9731F9068BF00C94C24 /* Small_piece_paper */,
 				2E698A9D1F8F60EA00C740CD /* Payment_arrears */,
 				2E6AB9B11F8F48E40079BAD8 /* Contract */,
@@ -451,6 +470,8 @@
 				2E27C9791F90696A00C94C24 /* Small_prece_paperTableViewCell.xib */,
 				2EED63781F9F281F009B45F4 /* PhotosCollectionViewCell.swift */,
 				2EED63791F9F281F009B45F4 /* PhotosCollectionViewCell.xib */,
+				2EED637E1FA30615009B45F4 /* Central_manageCollectionViewCell.swift */,
+				2EED637F1FA30615009B45F4 /* Central_manageCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,6 +546,33 @@
 				2EBE3CF41D9112960086FA45 /* Info.plist */,
 			);
 			path = "switf-MobileAssistantUITests";
+			sourceTree = "<group>";
+		};
+		2EE3CE941FA316E50035DB9F /* Cen_management */ = {
+			isa = PBXGroup;
+			children = (
+				2EE3CE951FA316FD0035DB9F /* Centralized_managementViewController.swift */,
+				2EE3CE961FA316FD0035DB9F /* Centralized_managementViewController.xib */,
+			);
+			path = Cen_management;
+			sourceTree = "<group>";
+		};
+		2EE3CE991FA319220035DB9F /* Marketing_Center */ = {
+			isa = PBXGroup;
+			children = (
+				2EE3CE9A1FA3192D0035DB9F /* Marketing_CenterListViewController.swift */,
+				2EE3CE9B1FA3192D0035DB9F /* Marketing_CenterListViewController.xib */,
+			);
+			path = Marketing_Center;
+			sourceTree = "<group>";
+		};
+		2EED63821FA310A7009B45F4 /* data_statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2EED63831FA310C3009B45F4 /* data_statisticsWebViewController.swift */,
+				2EED63841FA310C3009B45F4 /* data_statisticsWebViewController.xib */,
+			);
+			path = data_statistics;
 			sourceTree = "<group>";
 		};
 		5F5ABCF2EF7F942FF273FF0B /* Frameworks */ = {
@@ -662,12 +710,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E9A5C511F6F62870079660E /* UserTableCellHeaderView.xib in Resources */,
+				2EED63811FA30615009B45F4 /* Central_manageCollectionViewCell.xib in Resources */,
 				2EFB93431F7CE084001436ED /* PushSettingTableViewCell.xib in Resources */,
 				2EED636F1F9F105B009B45F4 /* small_piece_paperSubmitViewController.xib in Resources */,
+				2EED63861FA310C3009B45F4 /* data_statisticsWebViewController.xib in Resources */,
 				2E4ECC981F4EDA0500E13B08 /* NewsViewController.xib in Resources */,
 				2E918FF11F3D899F00B460C9 /* MainTableViewCell.xib in Resources */,
 				2E9A5C5B1F7390330079660E /* UserLogoutBtnView.xib in Resources */,
 				2E698A9C1F8F521700C740CD /* TwoLablesTableViewCell.xib in Resources */,
+				2EE3CE9D1FA3192D0035DB9F /* Marketing_CenterListViewController.xib in Resources */,
 				2E4C2E271F6A7F2000442273 /* NewsTableViewCell.xib in Resources */,
 				2E75A05B1F78D881005DF1EC /* P_SpecialListViewController.xib in Resources */,
 				2E9A5C611F749EE30079660E /* UserTaskListTableViewCell.xib in Resources */,
@@ -698,6 +749,7 @@
 				2EFB93471F7CE113001436ED /* SwitchTableViewCell.xib in Resources */,
 				2E9A5C551F6F9D2E0079660E /* MainBaseViewController.xib in Resources */,
 				2E75A0761F78E85C005DF1EC /* shareViewController.xib in Resources */,
+				2EE3CE981FA316FD0035DB9F /* Centralized_managementViewController.xib in Resources */,
 				2EBE3CDA1D9112960086FA45 /* Assets.xcassets in Resources */,
 				2E3777271F629B2700576F63 /* CustomerViewController.xib in Resources */,
 				2EFB933B1F7A2CA8001436ED /* ChangePwdViewController.xib in Resources */,
@@ -816,8 +868,11 @@
 				2E4ECC7F1F4ED9C600E13B08 /* Maco.swift in Sources */,
 				2EB8661D1F909D920000F6CF /* small_piece_paperDetailViewController.swift in Sources */,
 				2E5ED09E1F4576AF000F3C10 /* BusinessListCollectionViewCell.swift in Sources */,
+				2EED63801FA30615009B45F4 /* Central_manageCollectionViewCell.swift in Sources */,
+				2EE3CE971FA316FD0035DB9F /* Centralized_managementViewController.swift in Sources */,
 				2E698AA01F8F610600C740CD /* Payment_arrears_listViewController.swift in Sources */,
 				2E3777181F611D5200576F63 /* ZXYBaseViewController.swift in Sources */,
+				2EE3CE9C1FA3192D0035DB9F /* Marketing_CenterListViewController.swift in Sources */,
 				2EED636A1F9ED869009B45F4 /* ImagesBrowserViewController.swift in Sources */,
 				2E27C97A1F90696A00C94C24 /* Small_prece_paperTableViewCell.swift in Sources */,
 				2EA56DD31F4BBD5C004E4AD0 /* MyGroupTableViewCell.swift in Sources */,
@@ -841,6 +896,7 @@
 				2E4ECC971F4EDA0500E13B08 /* NewsViewController.swift in Sources */,
 				2E698A9B1F8F521700C740CD /* TwoLablesTableViewCell.swift in Sources */,
 				2E75A07D1F78F3D8005DF1EC /* SuggestViewController.swift in Sources */,
+				2EED63851FA310C3009B45F4 /* data_statisticsWebViewController.swift in Sources */,
 				2EB8E4541F8E17E600D561F1 /* Birthday_listViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
