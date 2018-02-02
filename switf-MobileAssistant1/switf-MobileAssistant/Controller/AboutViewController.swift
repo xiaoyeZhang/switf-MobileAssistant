@@ -34,6 +34,11 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     var finishDic:[String:String] = [:]
     
+    var numStr = "0"
+    
+    var tape_num = "0"
+    
+    
     deinit {
         
         NotificationCenter.default.removeObserver(self)
@@ -72,7 +77,7 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         if myModel.type_id != ROLE_CUSTOMER {
             
-            sectionArray = [["title":"待办事项","icon":"待办事项","section":"",
+            sectionArray = [["title":"待办事项","icon":"待办事项","numStr":numStr,"section":"",
                             "fistLeaf":[["title":" 特号办理","num":"t1+t2","viewController":"P_SpecialListViewController"],
                                         ["title":" 公司领导预约拜访","num":"t3","viewController":""],
                                         ["title":" 终端办理","num":"t4","viewController":""],
@@ -91,7 +96,7 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                              "fistLeaf":[["title":" 欠费催缴","viewController":""],
                                          ["title":" CRM业务办理情况","viewController":""],
                                          ["title":" 统一下单业务办理情况","viewController":""]]],
-                            ["title":"小纸条","icon":"小纸条工单icon","section":"","viewController":"small_piece_paperViewController"],
+                            ["title":"小纸条","icon":"小纸条工单icon","numStr":tape_num,"section":"","viewController":"small_piece_paperViewController"],
                             ["title":"欠费任务提醒","icon":"催缴任务","section":"","viewController":"Payment_arrears_listViewController"],
                             ["title":"合同到期提醒推送","icon":"合同到期-2","section":"","viewController":"Contract_expiresViewController"],
                             ["title":"客户生日提醒","icon":"生日提醒(1)","section":"","viewController":"Birthday_listViewController"],
@@ -112,7 +117,7 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             visitArray.add(["title":" 本月已走访集团客户","finish":"this_month_visited_num","total":"this_month_visit_total_num","secondLeaf":"1"])
             visitArray.add(["title":" 本月未走访集团客户","finish":"this_month_unvisit_num","total":"this_month_visit_total_num","secondLeaf":"2"])
             
-            sectionArray = [["title":"待办事项","icon":"待办事项","section":"",
+            sectionArray = [["title":"待办事项","icon":"待办事项","numStr":numStr,"section":"",
                              "fistLeaf":[["title":" 特号办理","num":"t1+t2","viewController":"P_SpecialListViewController"],
                                          ["title":" 公司领导预约拜访","num":"t3","viewController":""],
                                          ["title":" 终端办理","num":"t4","viewController":""],
@@ -132,7 +137,7 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                              "fistLeaf":[["title":" 欠费催缴","viewController":""],
                                          ["title":" CRM业务办理情况","viewController":""],
                                          ["title":" 统一下单业务办理情况","viewController":""]]],
-                            ["title":"小纸条","icon":"小纸条工单icon","section":"","viewController":"small_piece_paperViewController"],
+                            ["title":"小纸条","icon":"小纸条工单icon","numStr":tape_num,"section":"","viewController":"small_piece_paperViewController"],
                             ["title":"欠费任务提醒","icon":"催缴任务","section":"","viewController":"Payment_arrears_listViewController"],
                             ["title":"合同到期提醒推送","icon":"合同到期-2","section":"","viewController":"Contract_expiresViewController"],
                             ["title":"客户生日提醒","icon":"生日提醒(1)","section":"","viewController":"Birthday_listViewController"],
@@ -176,7 +181,16 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
             HeaderView.tag = section
             
-            HeaderView.titleLbl.text = dic["title"] as? String
+            if dic.keys.contains("numStr") {
+                
+                
+                HeaderView.titleLbl.text = (dic["title"] as? String)! + "(" + (dic["numStr"] as? String)! + ")"
+                
+            }else{
+                
+                HeaderView.titleLbl.text = dic["title"] as? String
+            }
+
             
             HeaderView.iconImage.image = UIImage(named: dic["icon"] as! String)
             
@@ -565,12 +579,15 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                     
                     self.tabBarItem.badgeValue = "\(num)"
                     
+                    self.numStr = String(num)
+                    
                 }else{
                     
                     self.tabBarItem.badgeValue = nil
                 
                 }
                 
+                self.reloadTableView()
             }else{
             
             }
@@ -588,7 +605,11 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         process.processWithBlock(cmdStr: parameters) { (backMsg) in
             
             let tape_num = backMsg.object(forKey: "state") as! String
-           
+            
+            self.tape_num = tape_num
+            
+            self.reloadTableView()
+
             print("\(tape_num)")
             
         }
@@ -642,6 +663,13 @@ class AboutViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         self.getUnfinishedNum()
         
         self.gettape_num()
+    }
+    
+    func reloadTableView() {
+        
+        self.setTableViewArr()
+    
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
