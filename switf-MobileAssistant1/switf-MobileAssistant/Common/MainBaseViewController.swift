@@ -70,7 +70,6 @@ class MainBaseViewController: ZXYBaseViewController,UICollectionViewDelegate,UIC
             
             if myModel.type_id != ROLE_CUSTOMER {
                 
-                
                 if myModel.type_id == ROLE_SOCOALCHANNEL {
                     BusinessArr.add(["title":"SA专用发起","icon":"p_book3","viewController":"SA_ListViewController"])
                 }
